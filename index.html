@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Fire Battlegrounds Tournament | Registration &amp; Entry</title>
+  <meta name="description" content="Register for the Free Fire Battle Royale tournament. Solo, duo and squad entry. ₹150 registration fee. Real-time brackets and live updates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script src="js/auth.js"></script>
+<script>
+    // Check if user is logged in
+    if (!isUserLoggedIn()) {
+        window.location.href = 'login.html';
+    }
+</script>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-bar" aria-hidden="true"></span>
+        <div class="brand-title">Free Fire Battlegrounds<br />Tournament</div>
+        <span class="brand-tag">CyberStrike // OPS_NET</span>
+      </div>
+
+      <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="#top">Tournament Hub</a>
+        <a href="#register" class="active">Squad Registration</a>
+        <a href="#brackets">Live Brackets</a>
+        <a href="#rules">Protocol Rules</a>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="slots-chip">Slots<strong>42/48 Locked</strong></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#590028" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="op-id">[OP_ID: FF-BR-PROTOCOL-2025]</div>
+          <h1>Free Fire Battle Royale Tournament &mdash; Registration &amp; Entry</h1>
+        </div>
+        <div class="portal-status">
+          <svg width="12" height="15" viewBox="0 0 12 15" fill="none" stroke="#ffb1c4" stroke-width="1.5" aria-hidden="true"><path d="M6 1l5 2v4.5c0 3.2-2.2 5.6-5 6.5C3.2 13.1 1 10.7 1 7.5V3l5-2z"/></svg>
+          <div>
+            <span class="label-xs" style="font-size:10px;">Portal Status</span>
+            <strong>Live Encrypted Gateway</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODE SWITCHER ============ -->
+    <section class="mode-section">
+      <div class="container">
+        <div class="mode-bar" role="group" aria-label="Entry mode">
+          <div class="mode-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5bcc5" stroke-width="2" aria-hidden="true"><path d="M6 9V4h12v5M6 18H4v-6h16v6h-2M6 14v4h12v-4"/></svg>
+            Deployment Protocol:
+          </div>
+          <div class="mode-tabs">
+            <button class="mode-tab" type="button" data-mode="solo" aria-pressed="false">
+              <span class="code">[OP_01]</span>
+              <span class="name">Solo</span>
+              <span class="desc">1 Combatant</span>
+            </button>
+            <button class="mode-tab" type="button" data-mode="duo" aria-pressed="false">
+              <span class="code">[OP_02]</span>
+              <span class="name">Duo</span>
+              <span class="desc">2 Combatants</span>
+            </button>
+            <button class="mode-tab active" type="button" data-mode="squad" aria-pressed="true">
+              <span class="code">[SYS_ACTIVE]</span>
+              <span class="name">Squad</span>
+              <span class="desc">4 Main + 1 Reserve</span>
+            </button>
+          </div>
+          <div class="region">Server Region: <strong>IND // High Priority</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGISTRATION + PAYMENT ============ -->
+    <section class="register" id="register">
+      <div class="container">
+        <div class="reg-grid">
+
+          <!-- Left: registration form -->
+          <div>
+            <form class="panel" id="registrationForm" novalidate>
+              <div class="panel-header">
+                <div class="title">Entry Registration // Participant Details</div>
+                <div class="meta">Mandatory</div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Arjun Mehta" maxlength="80" required aria-describedby="nameError" />
+                  <div class="field-error" id="nameError" role="alert"></div>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="combatant@example.com" maxlength="120" required aria-describedby="emailError" />
+                  <div class="field-error" id="emailError" role="alert"></div>
+                </div>
+
+                <div class="field full">
+                  <label for="phone">Phone (WhatsApp / Mobile)</label>
+                  <div class="phone-wrap">
+                    <span class="phone-prefix" aria-hidden="true">+91</span>
+                    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="9876543210" maxlength="16" required aria-describedby="phoneError" />
+                  </div>
+                  <div class="field-error" id="phoneError" role="alert"></div>
+                </div>
+
+                <div class="field full">
+                  <label for="gameMode">Game Mode</label>
+                  <select id="gameMode" name="gameMode" required aria-describedby="gameModeError">
+                    <option value="">Select game mode...</option>
+                    <option value="solo">Solo (1 Combatant)</option>
+                    <option value="duo">Duo (2 Combatants)</option>
+                    <option value="squad" selected>Squad (4 Main + 1 Reserve)</option>
+                  </select>
+                  <div class="field-error" id="gameModeError" role="alert"></div>
+                </div>
+
+                <div class="field full">
+                  <label for="freeFireId">Free Fire UID</label>
+                  <input id="freeFireId" name="freeFireId" type="text" placeholder="e.g. 12345678" maxlength="20" required aria-describedby="freeFireIdError" />
+                  <div class="field-error" id="freeFireIdError" role="alert"></div>
+                </div>
+              </div>
+
+              <div class="submit-row">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Submit Registration</button>
+                <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+                <div class="status-note">Your details are sent to the tournament organisers. Pay the fee on the right to secure your slot.</div>
+              </div>
+            </form>
+
+            <!-- Optical scanner -->
+            <div class="panel" style="margin-top:24px;">
+              <div class="panel-header">
+                <div class="title">Optical Scanner // Fast Check-in &amp; Proof Verifier</div>
+                <div class="meta cyan" id="scannerStatus">Optical HUD: Ready</div>
+              </div>
+              <div class="scanner">
+                <div class="scanner-frame" id="scannerFrame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                  <span class="scan-line"></span>
+                  <span class="scanner-caption" id="scannerCaption">Camera stream: Standby</span>
+                  <span class="scanner-hint">Align entry QR within frame</span>
+                </div>
+                <p class="scanner-note">Scanning is used by tournament referees for check-in. Camera access is requested only when you press the button below.</p>
+                <button class="btn btn-secondary" type="button" id="cameraBtn">Start Camera Check-in</button>
+                <div class="scanner-info" id="scannerInfo" style="display:none;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: payment -->
+          <aside class="panel payment-panel" aria-labelledby="paymentHeading">
+            <div class="panel-header">
+              <div class="title" id="paymentHeading">Payment Authorization Node</div>
+              <div class="meta">UPI Direct Gate</div>
+            </div>
+
+            <div class="price-card">
+              <div>
+                <div class="label-xs">Required Registration Fee</div>
+                <div class="price">₹150</div>
+                <div class="price-sub">Squad tier (full roster verification)</div>
+              </div>
+              <div class="currency">
+                <div class="label-xs">Currency</div>
+                <div class="value">INR (UPI)</div>
+                <div class="pill-dot">Pay after registering</div>
+              </div>
+            </div>
+
+            <div class="qr-section">
+              <h3 class="pay-heading">PAY TO ENTER THE BATTLE</h3>
+              <p class="pay-text">Scan the QR code below using your UPI app to pay the tournament registration fee.</p>
+
+              <div class="qr-box">
+                <img
+                  class="qr-image"
+                  src="assets/payment-qr.jpeg"
+                  alt="Official tournament payment QR code. Scan with any UPI app to pay the registration fee."
+                  width="300"
+                  height="300"
+                />
+                <div class="qr-placeholder" role="img" aria-label="Payment QR code unavailable" hidden>
+                  <span>Payment QR unavailable<br />Replace with your UPI QR image</span>
+                </div>
+              </div>
+
+              <p class="pay-instruction">After completing your payment, keep your transaction confirmation for verification.</p>
+
+              <button class="btn btn-secondary btn-wide" type="button" id="paidBtn">I HAVE COMPLETED PAYMENT</button>
+              <div class="status" id="paymentStatus" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="payment-verify">
+              <strong>Payment verification</strong>
+              Opening the payment page does not confirm your payment. Slots are confirmed only after the organisers verify your payment manually.
+            </div>
+
+            <div class="notice" role="note">
+              <div class="notice-icon" aria-hidden="true">!</div>
+              <div>
+                <div class="notice-title">Critical Advisory // 15-Minute Lock</div>
+                <p>Slots are reserved for 15 minutes after submission. Free Fire UID validation and payment records will be cross-checked manually by tournament referees. Fake IDs result in a permanent ban.</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BRACKETS (PLACEHOLDER) ============ -->
+    <section class="brackets-section" id="brackets" style="scroll-margin-top: 80px;">
+      <div class="container">
+        <div class="panel" style="background: transparent; padding: 0; box-shadow: none;">
+          <div class="panel-header" style="background: var(--bg-card);">
+            <div class="title">Live Tournament Brackets</div>
+            <div class="meta">Real-time updates</div>
+          </div>
+        </div>
+        <div class="panel" style="padding: 40px; text-align: center;">
+          <p style="color: var(--text-muted); font-size: 16px; margin: 0;">
+            Tournament brackets will be published here once registrations are confirmed.<br />
+            <span style="font-size: 12px; color: var(--accent);">Current status: Accepting registrations</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RULES ============ -->
+    <section class="rules-section" id="rules">
+      <div class="container">
+        <div class="panel" style="background: transparent; padding: 0; box-shadow: none;">
+          <div class="panel-header" style="background: var(--bg-card);">
+            <div class="title">Protocol Rules &amp; Tournament Information</div>
+            <div class="meta">Read before entering</div>
+          </div>
+        </div>
+
+        <div class="rules-grid">
+          <article class="rule-card">
+            <h3>Fair play mandate</h3>
+            <p>Emulators are strictly prohibited. Only mobile-only touch control devices are allowed. Screen recorders are permitted for your own review.</p>
+          </article>
+          <article class="rule-card">
+            <h3>Roster policy</h3>
+            <p>Squads field 4 main players and 1 reserve. Teaming with other squads is not allowed. Each player must hold a Level 40+ Free Fire account.</p>
+          </article>
+          <article class="rule-card">
+            <h3>Check-in &amp; results</h3>
+            <p>Check-in is handled by referees using the scanner. Brackets and results will be published on the Live Brackets page once they are confirmed.</p>
+          </article>
+        </div>
+
+        <div class="integrity-row">
+          <div class="tags">
+            <span class="tag red">No teaming</span>
+            <span class="tag cyan">Screen recorder ready</span>
+            <span class="tag amber">Level 40+ FF account</span>
+          </div>
+          <div class="tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5bcc5" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg>
+            Garina anti-cheat &amp; protocol compliant
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">CyberStrike FF Protocol</div>
+        <div class="footer-sub">Authorized esports operations &middot; High-voltage net</div>
+      </div>
+      <div class="footer-stats">
+        <span>Players: <span class="hi">42</span></span>
+        <span>Rounds: <span class="hi">18</span></span>
+        <span>Latency: <span class="hi">12ms</span></span>
+        <span>Security: <span class="pink">Encrypted</span></span>
+      </div>
+      <div class="copyright">&copy; 2025 Free Fire Battlegrounds Tournament Platform. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/validation.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
